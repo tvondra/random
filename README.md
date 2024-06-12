@@ -76,6 +76,44 @@ Generates a random 64-bit floating point value in the specified
 interval.
 
 
+### `random_inet(seed, nvalues)`
+
+Generates a random `INET` address. The generated addresses have
+`/32` mask.
+
+
+### `random_cnet(seed, nvalues)`
+
+Generates a random `CNET` address. The generated addresses have
+masks set to `8`, `16`, `24` or `32`, and the addresses are picked
+with the same probability. This means that addresses with short
+masks are much less common in the output - for every `/8` address
+we expect 16M `/32` addresses.
+
+
+### `random_cnet2(seed, nvalues)`
+
+Generates a random `CNET` address. The generated addresses have
+masks set to `8`, `16`, `24` or `32`, but the addresses don't have
+the same probability. Instead, data is generates so that each mask
+length represents the same fraction of the produced values (1/4 for
+each mask length).
+
+This however means that longer masks will have namy more distinct
+values, to compensate for this skew (the shorter the mask, the
+fewer distinct values it can accomodate).
+
+
+### `random_macaddr(seed, nvalues)`
+
+Generates a random MACADDR value (6B variant).
+
+
+### `random_macaddr8(seed, nvalues)`
+
+Generates a random MACADDR8 value (8B variant).
+
+
 License
 -------
 This software is distributed under the terms of PostgreSQL license.

@@ -33,3 +33,27 @@ LANGUAGE C STRICT;
 CREATE FUNCTION random_double_precision(seed int, nvalues int, min_value double precision, max_value double precision) RETURNS double precision
 AS 'MODULE_PATHNAME', 'random_double_precision'
 LANGUAGE C STRICT;
+
+CREATE FUNCTION random_numeric(seed int, nvalues int, min_value double precision, max_value double precision) RETURNS numeric
+AS 'MODULE_PATHNAME', 'random_numeric_ext'
+LANGUAGE C STRICT;
+
+CREATE FUNCTION random_macaddr(seed int, nvalues int) RETURNS macaddr
+AS 'MODULE_PATHNAME', 'random_macaddr'
+LANGUAGE C STRICT;
+
+CREATE FUNCTION random_macaddr8(seed int, nvalues int) RETURNS macaddr8
+AS 'MODULE_PATHNAME', 'random_macaddr8'
+LANGUAGE C STRICT;
+
+CREATE FUNCTION random_inet(seed int, nvalues int) RETURNS inet
+AS 'MODULE_PATHNAME', 'random_inet'
+LANGUAGE C STRICT;
+
+CREATE FUNCTION random_cidr(seed int, nvalues int) RETURNS cidr
+AS 'MODULE_PATHNAME', 'random_cidr'
+LANGUAGE C STRICT;
+
+CREATE FUNCTION random_cidr2(seed int, nvalues int) RETURNS cidr
+AS 'MODULE_PATHNAME', 'random_cidr2'
+LANGUAGE C STRICT;
