@@ -1,5 +1,7 @@
 # random generator extension
 
+[![make installcheck](https://github.com/tvondra/random/actions/workflows/ci.yml/badge.svg)](https://github.com/tvondra/random/actions/workflows/ci.yml)
+
 This PostgreSQL extension implements a couple of functions to generate
 random values for various data types, which may be useful for testing
 purposes etc.
