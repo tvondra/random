@@ -1,5 +1,5 @@
 MODULE_big = random
-OBJS = random.o
+OBJS = random.o pg_prng_compat.o
 
 EXTENSION = random
 DATA = random--1.0.0.sql random--1.0.0--2.0.0-dev.sql

@@ -6,7 +6,12 @@
 
 #include "postgres.h"
 
+#if PG_VERSION_NUM >= 150000
 #include "common/pg_prng.h"
+#else
+#include "pg_prng_compat.h"
+#endif
+
 #include "utils/datum.h"
 #include "utils/array.h"
 #include "utils/lsyscache.h"
@@ -36,6 +41,7 @@ PG_FUNCTION_INFO_V1(random_macaddr8);
 PG_FUNCTION_INFO_V1(random_inet);
 PG_FUNCTION_INFO_V1(random_cidr);
 PG_FUNCTION_INFO_V1(random_cidr2);
+
 
 /* main PRNG generator */
 static	bool			main_initialized = false;
